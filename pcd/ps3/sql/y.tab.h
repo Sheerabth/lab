@@ -58,16 +58,20 @@ extern int yydebug;
     FROM = 259,                    /* FROM  */
     AS = 260,                      /* AS  */
     WHERE = 261,                   /* WHERE  */
-    GROUPBY = 262,                 /* GROUPBY  */
+    GROUP_BY = 262,                /* GROUP_BY  */
     LIMIT = 263,                   /* LIMIT  */
     OFFSET = 264,                  /* OFFSET  */
     IDENTIFIER = 265,              /* IDENTIFIER  */
     CONSTANT = 266,                /* CONSTANT  */
-    OR = 267,                      /* OR  */
-    AND = 268,                     /* AND  */
-    NE = 269,                      /* NE  */
-    LE = 270,                      /* LE  */
-    GE = 271                       /* GE  */
+    INSERT_INTO = 267,             /* INSERT_INTO  */
+    VALUES = 268,                  /* VALUES  */
+    UPDATE = 269,                  /* UPDATE  */
+    SET = 270,                     /* SET  */
+    OR = 271,                      /* OR  */
+    AND = 272,                     /* AND  */
+    NE = 273,                      /* NE  */
+    LE = 274,                      /* LE  */
+    GE = 275                       /* GE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -80,16 +84,20 @@ extern int yydebug;
 #define FROM 259
 #define AS 260
 #define WHERE 261
-#define GROUPBY 262
+#define GROUP_BY 262
 #define LIMIT 263
 #define OFFSET 264
 #define IDENTIFIER 265
 #define CONSTANT 266
-#define OR 267
-#define AND 268
-#define NE 269
-#define LE 270
-#define GE 271
+#define INSERT_INTO 267
+#define VALUES 268
+#define UPDATE 269
+#define SET 270
+#define OR 271
+#define AND 272
+#define NE 273
+#define LE 274
+#define GE 275
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

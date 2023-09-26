@@ -5,7 +5,7 @@
     int yylex(void);
 %}
 
-%token SELECT FROM AS WHERE GROUPBY LIMIT OFFSET IDENTIFIER CONSTANT
+%token SELECT FROM AS WHERE GROUP_BY LIMIT OFFSET IDENTIFIER CONSTANT INSERT_INTO VALUES UPDATE SET
 
 %left OR
 %left AND
@@ -15,17 +15,44 @@
 
 %%
 program:
-    program select { printf("Valid statements\n"); }
+    program statement { printf("Valid statement\n"); }
     |
     ;
+
+statement:
+    select ';'
+    | insert ';'
+    | update ';'
 
 select:
     SELECT projection FROM IDENTIFIER where groupBy limit offset
     ;
 
+insert:
+    INSERT_INTO IDENTIFIER '(' columns ')' VALUES '(' values ')'
+    | INSERT_INTO IDENTIFIER VALUES '(' values ')'
+    ;
+
+update:
+    UPDATE IDENTIFIER SET updateValues WHERE expr
+    ;
+
+updateValues:
+    updateValues ',' updateValue
+    | updateValue
+
+updateValue:
+    IDENTIFIER '=' CONSTANT
+    ;
+
 projection:
     '*'
     | columns
+    ;
+
+values:
+    values ',' CONSTANT
+    | CONSTANT
     ;
 
 columns:
@@ -44,7 +71,7 @@ where:
     ;
 
 groupBy:
-    GROUPBY IDENTIFIER
+    GROUP_BY IDENTIFIER
     |
     ;
 

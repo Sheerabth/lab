@@ -13,7 +13,12 @@
 "where"|"WHERE" return WHERE;
 "as"|"AS" return AS;
 
-"group by"|"GROUP BY" return GROUPBY;
+"insert into"|"INSERT INTO" return INSERT_INTO;
+"values"|"VALUES" return VALUES;
+"update"|"UPDATE" return UPDATE;
+"set"|"SET" return SET;
+
+"group by"|"GROUP BY" return GROUP_BY;
 "limit"|"LIMIT" return LIMIT;
 "offset"|"OFFSET" return OFFSET;
 
