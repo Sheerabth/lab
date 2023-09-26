@@ -5,7 +5,7 @@
     int yylex(void);
 %}
 
-%token SELECT FROM AS WHERE GROUP_BY LIMIT OFFSET IDENTIFIER CONSTANT INSERT_INTO VALUES UPDATE SET
+%token SELECT FROM AS WHERE GROUP_BY LIMIT OFFSET IDENTIFIER CONSTANT INSERT_INTO VALUES UPDATE SET DELETE_FROM
 
 %left OR
 %left AND
@@ -23,6 +23,7 @@ statement:
     select ';'
     | insert ';'
     | update ';'
+    | delete ';'
 
 select:
     SELECT projection FROM IDENTIFIER where groupBy limit offset
@@ -35,6 +36,10 @@ insert:
 
 update:
     UPDATE IDENTIFIER SET updateValues WHERE expr
+    ;
+
+delete:
+    DELETE_FROM IDENTIFIER where
     ;
 
 updateValues:

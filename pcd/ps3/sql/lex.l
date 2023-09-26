@@ -22,6 +22,8 @@
 "limit"|"LIMIT" return LIMIT;
 "offset"|"OFFSET" return OFFSET;
 
+"delete from"|"DELETE FROM" return DELETE_FROM;
+
 "or"|"OR" return OR;
 "and"|"AND" return AND;
 
