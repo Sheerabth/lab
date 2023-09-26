@@ -1,0 +1,20 @@
+a = 50;
+b = 10;
+c = 20;
+d = 30;
+
+if(a >= b && c < d) {
+    print 11111;
+    print a;
+} else {
+    print 22222;
+    print b;
+}
+
+e = 1;
+f = 10;
+
+while(e <= f) {
+    print e;
+    e = e + 1;
+}

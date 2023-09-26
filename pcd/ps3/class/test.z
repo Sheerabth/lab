@@ -1,0 +1,14 @@
+class Student : public Person, Dog, private Boomer {
+    private:
+        int marks;
+        char* name;
+    public:
+        void get_grade();
+        int get_marks();
+        void set_marks(int mark);
+        void random_pointer(int* ptr);
+        int* return_pointer();
+        int sum(int a, int b);
+        int* sum(int* a, int* b);
+        void* myVoidPointerFunction();
+};

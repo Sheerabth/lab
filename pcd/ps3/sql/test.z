@@ -1,0 +1,7 @@
+SELECT id, sum as sum2 
+FROM table1 
+WHERE some_col = 10 AND
+(SELECT * FROM col_2) != 100
+GROUP BY department 
+LIMIT 10
+OFFSET 2
